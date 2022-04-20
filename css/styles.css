@@ -159,6 +159,23 @@ img {
   display: block;
 }
 
+.current {
+  position: relative;
+}
+
+.current::after {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+
+  background-color: var(--accent-color);
+}
+
 .header-contacts-list {
   display: flex;
   align-items: center;
@@ -188,7 +205,6 @@ img {
 .header-contacts-list .header-contacts:hover,
 .header-contacts-list .header-contacts:focus {
   color: var(--accent-color);
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .mail {
@@ -313,7 +329,38 @@ img {
 }
 
 .about-item {
+  position: relative;
+
   margin-right: 30px;
+}
+
+/* .about-box {
+  position: relative;
+} */
+
+.about-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+
+  padding: 27px 82px;
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: var(--second-color);
+  background-color: rgba(47, 48, 58, 0.8);
 }
 
 /* team */
@@ -606,7 +653,6 @@ img {
 
 .button:hover,
 .button:focus {
-  cursor: pointer;
   color: var(--second-color);
   background-color: var(--accent-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
@@ -677,4 +723,82 @@ img {
   line-height: 1.88;
   letter-spacing: 0.03em;
   color: var(--title-text-color);
+}
+
+/* MODAL */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color: rgba(0, 0, 0, 0.2);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.backdrop.is-hidden {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 528px;
+  height: 581px;
+
+  background-color: var(--second-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.modal-close-btn {
+  display: flex;
+  align-items: center;
+
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  background-color: var(--second-color);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+}
+
+/* .modal-close-icon {
+} */
+
+/* ------------------------- END modal ------------------------- */
+
+/* Overlay */
+
+.product-wrapper {
+  display: block;
+  width: 350px;
+}
+
+.products-descr {
+  width: 100%;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+
+  /* color: var(--second-color); */
+  color: gold;
+
+  padding: 63px 24px;
 }
