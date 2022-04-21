@@ -450,7 +450,7 @@ img {
 
 .socials-icon {
   fill: #afb1b8;
-  transition: color var(--animation);
+  transition: fill var(--animation);
 }
 
 .socials-link:hover .socials-icon,
