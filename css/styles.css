@@ -341,7 +341,7 @@ img {
   display: flex;
   align-items: center;
 
-  padding: 27px 82px;
+  padding: 10px 82px;
 
   font-style: normal;
   font-weight: 700;
@@ -450,6 +450,7 @@ img {
 
 .socials-icon {
   fill: #afb1b8;
+  transition: color var(--animation);
 }
 
 .socials-link:hover .socials-icon,
@@ -609,6 +610,7 @@ img {
 
 .filter {
   margin-bottom: 34px;
+  animation: name duration timing-function delay iteration-count direction fill-mode;
 }
 
 .button-list {
@@ -751,6 +753,7 @@ img {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 100;
 
   width: 100vw;
   height: 100vh;
